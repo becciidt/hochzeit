@@ -347,7 +347,7 @@ iframe {
 }
 
 .rsvp-wrap {
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -360,7 +360,7 @@ iframe {
 
 @media (max-width: 480px) {
   .rsvp {
-    min-height: 600px;
+    min-height: 1600px;
   }
   .rsvp-wrap iframe {
     height: auto !important;
