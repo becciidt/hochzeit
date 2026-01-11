@@ -51,14 +51,16 @@ body {
   text-shadow: 0 4px 14px rgba(33,79,61,0.12);
 }
 
-.hero p {
+.hero h3 {
   font-family: 'Champagne and Limousines', cursive;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.4;
-  margin-top: 6px;
+  margin-top: -15px;
   position: relative;
   z-index: 1;
-  color: #214F3D;
+  color: #6b4f4f;
+  opacity: 0.7;
+  filter: brightness(1.1);
 }
 
 /* Allgemeine Sektion */
@@ -78,11 +80,48 @@ section h2 {
 .infos h2 {
   font-family: "Helvetica", sans-serif;
 }
+ 
+.full-image {
+  width: 100%;
+  margin: 0;
+}
+
+.full-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*.info-block {
+  position: relative;
+  padding: 20px 0;
+}
+
+Organic background shape for alternating sections 
+.info-block--bg {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><filter id="blur"><feGaussianBlur in="SourceGraphic" stdDeviation="4" /></filter></defs><path d="M0,80 Q300,20 600,40 Q900,30 1200,100 Q1200,200 1150,280 Q1100,350 900,380 Q600,400 300,380 Q100,360 0,320 L0,0 Z" fill="%23214F3D" opacity="1" filter="url(%23blur)"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  padding: 40px 20px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.info-block--bg h2,
+.info-block--bg p,
+.info-block--bg h3 {
+  color: white;
+  position: relative;
+  z-index: 10;
+}*/
+
 
 .infos p {
-  font-family: 'Champagne and Limousines', cursive;
-  font-size: 1.5rem;
-  line-height: 1.1;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 100;
   text-align: justify;
 }
 
