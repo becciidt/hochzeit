@@ -33,11 +33,12 @@ function adjustRsvpHeight() {
   const rect = iframe.getBoundingClientRect();
   // available vertical space below the iframe top
   const available = window.innerHeight - rect.top - 20; // 20px margin
-  const minHeight = 500; // fallback minimum
-  // Make iframe 3x the available viewport area so the embedded form doesn't need its own scrollbar
-  const desired = Math.max(available * 3, minHeight);
+  const minHeight = 2500; // set a large minimum so the embedded form doesn't need to scroll
+  // Make iframe 3x the available viewport area as before, but enforce a large minimum
+  let desired = available > 0 ? available * 3 : minHeight;
+  desired = Math.max(desired, minHeight);
   // Optional clamp to avoid extremely large values on very tall screens
-  const maxHeight = 4000;
+  const maxHeight = 8000;
   iframe.style.height = Math.min(desired, maxHeight) + 'px';
 }
 
