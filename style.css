@@ -1,31 +1,66 @@
+/* Grundlayout */
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Helvetica", sans-serif;
   background: #faf9f7;
   color: #333;
+  line-height: 1.5;
 }
 
+/* Hero-Bereich */
 .hero {
-  height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 20px;
+  background: #efe8e0;
+  color: #6b4f4f;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin: 0;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Allgemeine Sektion */
 section {
-  padding: 20px;
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
+/* Überschriften */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #6b4f4f;
+}
+
+/* Kartenlink */
+a.map {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background: #d7b59e;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Google Form */
 .googleform {
   width: 100%;
-  height: 400px;
+  height: 420px;
   border: none;
+  border-radius: 8px;
+  background: white;
 }
