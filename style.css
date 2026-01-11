@@ -16,7 +16,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
-  background: linear-gradient(rgba(239, 232, 224, 0.75), rgba(239, 232, 224, 0.75)), url("../image/bild1.jfif") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(239, 232, 224, 0.75), rgba(239, 232, 224, 0.75)), url("image/bild1.png") center/cover no-repeat fixed;
   background-attachment: fixed;
   background-size: cover;
   color: #6b4f4f;
