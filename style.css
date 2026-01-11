@@ -347,22 +347,22 @@ iframe {
 }
 
 .rsvp-wrap {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
 .rsvp-wrap iframe {
   width: 100%;
   /* Force a large height so the Google Form fits without its own scrollbar. */
-  height: 800px !important;
+  height: 720px !important;
   border: 0;
 }
 
 @media (max-width: 480px) {
   .rsvp {
-    min-height: 800px;
+    min-height: 720px;
   }
   .rsvp-wrap iframe {
-    height: 800px !important;
+    height: 720px !important;
   }
 }
