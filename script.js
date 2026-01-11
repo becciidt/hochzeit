@@ -24,3 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
   // Smooth Scroll für Browser die das nicht unterstützen
   document.documentElement.style.scrollBehavior = 'smooth';
 });
+
+// Adjust RSVP iframe height to fit viewport (can't read cross-origin content)
+function adjustRsvpHeight() {
+  const iframe = document.getElementById('rsvpForm');
+  if (!iframe) return;
+  // distance from top of viewport to top of iframe
+  const rect = iframe.getBoundingClientRect();
+  // available vertical space below the iframe top
+  const available = window.innerHeight - rect.top - 20; // 20px margin
+  const minHeight = 500; // fallback minimum
+  iframe.style.height = Math.max(available, minHeight) + 'px';
+}
+
+window.addEventListener('resize', adjustRsvpHeight);
+window.addEventListener('orientationchange', adjustRsvpHeight);
+window.addEventListener('load', adjustRsvpHeight);
+document.addEventListener('DOMContentLoaded', adjustRsvpHeight);
