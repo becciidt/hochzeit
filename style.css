@@ -36,11 +36,14 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-family: 'Great Vibes', "Helvetica", cursive;
+  font-size: 4.5rem;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   position: relative;
   z-index: 1;
+  text-shadow: 0 4px 14px rgba(107,79,79,0.08);
 }
 
 .hero p {
@@ -99,7 +102,7 @@ iframe {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .hero p {
@@ -123,7 +126,7 @@ iframe {
 /* Mittlere Bildschirme (Tablets und große Smartphones, 480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
   .hero h1 {
-    font-size: 2.4rem;
+    font-size: 3rem;
   }
 
   .hero p {
@@ -333,5 +336,33 @@ iframe {
 
   .timeline-content {
     margin-left: 10px;
+  }
+}
+
+/* RSVP: force large visible area so embedded form doesn't get internal scrollbars */
+.rsvp {
+  padding: 40px 20px;
+  background: #fff;
+  min-height: 2600px; /* ensure section has enough height */
+}
+
+.rsvp-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.rsvp-wrap iframe {
+  width: 100%;
+  /* Force a large height so the Google Form fits without its own scrollbar. */
+  height: 3000px !important;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .rsvp {
+    min-height: 2200px;
+  }
+  .rsvp-wrap iframe {
+    height: 2600px !important;
   }
 }
