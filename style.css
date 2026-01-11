@@ -343,7 +343,7 @@ iframe {
 .rsvp {
   padding: 40px 20px;
   background: #fff;
-  min-height: 2600px; /* ensure section has enough height */
+  min-height: 600px; /* ensure section has enough height */
 }
 
 .rsvp-wrap {
@@ -354,15 +354,15 @@ iframe {
 .rsvp-wrap iframe {
   width: 100%;
   /* Force a large height so the Google Form fits without its own scrollbar. */
-  height: 3000px !important;
+  height: auto !important;
   border: 0;
 }
 
 @media (max-width: 480px) {
   .rsvp {
-    min-height: 2200px;
+    min-height: 600px;
   }
   .rsvp-wrap iframe {
-    height: 2600px !important;
+    height: auto !important;
   }
 }
