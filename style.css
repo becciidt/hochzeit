@@ -354,7 +354,7 @@ iframe {
 .rsvp-wrap iframe {
   width: 100%;
   /* Force a large height so the Google Form fits without its own scrollbar. */
-  height: auto !important;
+  height: 1600px !important;
   border: 0;
 }
 
@@ -363,6 +363,6 @@ iframe {
     min-height: 1600px;
   }
   .rsvp-wrap iframe {
-    height: auto !important;
+    height: 1600px !important;
   }
 }
