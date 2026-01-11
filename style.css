@@ -16,18 +16,37 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
-  background: #efe8e0;
+  background: linear-gradient(rgba(239, 232, 224, 0.75), rgba(239, 232, 224, 0.75)), url("../image/bild1.jfif") center/cover no-repeat fixed;
+  background-attachment: fixed;
+  background-size: cover;
   color: #6b4f4f;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(8px);
+  z-index: -1;
 }
 
 .hero h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
   font-weight: bold;
+  position: relative;
+  z-index: 1;
 }
 
 .hero p {
   font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Allgemeine Sektion */
@@ -75,6 +94,10 @@ iframe {
 
 /* Kleine Bildschirme (Smartphones, unter 480px) */
 @media (max-width: 479px) {
+  .hero {
+    background-attachment: scroll;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
