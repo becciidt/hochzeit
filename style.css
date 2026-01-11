@@ -1,60 +1,69 @@
+/* Custom Font */
+@font-face {
+  font-family: 'Retro Signature';
+  src: url('fonts/RetroSignature.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Champagne and Limousines';
+  src: url('fonts/Champagne & Limousines.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Grundlayout */
 body {
   margin: 0;
   font-family: "Helvetica", sans-serif;
-  background: #faf9f7;
+  background: #f9f8f6;
   color: #333;
   line-height: 1.5;
 }
 
 /* Hero-Bereich */
 .hero {
-  min-height: 90vh;
+  min-height: 65vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   padding: 20px;
-  background: linear-gradient(rgba(239, 232, 224, 0.75), rgba(239, 232, 224, 0.75)), url("image/bild1.png") center/cover no-repeat fixed;
-  background-attachment: fixed;
-  background-size: cover;
+  padding-top: 12vh;
+  padding-bottom: 3vh;
+  /* show full image width without cropping */
+  background: url("image/Strand_R.jpeg") top center / 100% auto no-repeat;
+  background-attachment: scroll;
   color: #6b4f4f;
   position: relative;
 }
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  filter: blur(8px);
-  z-index: -1;
-}
-
 .hero h1 {
-  font-family: 'Great Vibes', "Helvetica", cursive;
-  font-size: 8.5rem;
-  margin-bottom: 10px;
+  font-family: 'Retro Signature', cursive;
+  font-size: 16rem;
+  margin-bottom: 6px;
   font-weight: 400;
   letter-spacing: 0.02em;
+  color: #214F3D;
   position: relative;
   z-index: 1;
-  text-shadow: 0 4px 14px rgba(107,79,79,0.08);
+  text-shadow: 0 4px 14px rgba(33,79,61,0.12);
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-family: 'Champagne and Limousines', cursive;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.4;
+  margin-top: 6px;
   position: relative;
   z-index: 1;
+  color: #214F3D;
 }
 
 /* Allgemeine Sektion */
 section {
-  padding: 30px 20px;
+  padding: 20px 20px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -64,6 +73,21 @@ section h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: #6b4f4f;
+}
+
+.infos h2 {
+  font-family: "Helvetica", sans-serif;
+}
+
+.infos p {
+  font-family: 'Champagne and Limousines', cursive;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-align: justify;
+}
+
+p {
+  font-family: 'Champagne and Limousines', cursive;
 }
 
 /* Kartenlink */
@@ -93,6 +117,17 @@ iframe {
   height: auto;
 }
 
+/* Ablauf-Bild */
+.ablauf {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 18px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
 /* Media Queries für mobile Geräte */
 
 /* Kleine Bildschirme (Smartphones, unter 480px) */
@@ -102,7 +137,7 @@ iframe {
   }
 
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
 
   .hero p {
@@ -126,7 +161,7 @@ iframe {
 /* Mittlere Bildschirme (Tablets und große Smartphones, 480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
   .hero h1 {
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
 
   .hero p {
