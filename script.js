@@ -34,22 +34,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 
-// Adjust RSVP iframe height to fit viewport (can't read cross-origin content)
-function adjustRsvpHeight() {
-  const iframe = document.getElementById('rsvpForm');
-  if (!iframe) return;
-  // distance from top of viewport to top of iframe
-  const rect = iframe.getBoundingClientRect();
-  // available vertical space below the iframe top
-  const available = window.innerHeight - rect.top - 20; // 20px margin
-  const minHeight = 2500; // set a large minimum so the embedded form doesn't need to scroll
-  // Make iframe 3x the available viewport area as before, but enforce a large minimum
-  let desired = available > 0 ? available * 3 : minHeight;
-  desired = Math.max(desired, minHeight);
-  // Optional clamp to avoid extremely large values on very tall screens
-  const maxHeight = 8000;
-  iframe.style.height = Math.min(desired, maxHeight) + 'px';
-}
+
 
 window.addEventListener('resize', adjustRsvpHeight);
 window.addEventListener('orientationchange', adjustRsvpHeight);

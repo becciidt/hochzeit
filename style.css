@@ -83,7 +83,8 @@ body {
   font-family: 'Champagne and Limousines', cursive;
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.4;
-  margin-top: -15px;
+  margin-top: 0 px;
+  margin-bottom: 15px;
   position: relative;
   z-index: 1;
   color: #6b4f4f;
@@ -451,6 +452,11 @@ iframe {
   .timeline-content {
     margin-left: 10px;
   }
+}
+
+.countdown-timer { /* Countdown Timer Styling */
+  display: block;
+  margin: 8px 0 4px 0;
 }
 
 /* RSVP: force large visible area so embedded form doesn't get internal scrollbars */
