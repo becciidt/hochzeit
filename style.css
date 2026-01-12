@@ -24,6 +24,11 @@ body {
   width: 100%;
   overflow-x: hidden;
 
+
+/* Make sizing consistent so max-width + padding align predictably */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
  }
 
  .fade-in {
@@ -116,16 +121,41 @@ section h2 {
   position: relative;
   padding: 20px 0;
 }
+  .info-block {
+    position: relative;
+    padding: 20px 0;
+  }
 
 /* Green background for alternating sections */
 .info-block--filled {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background: #b8c3bc;
   color: #6b4f4f;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   padding: 40px 24px;
 }
+  .info-block--filled {
+    background: #b8c3bc;
+    color: #6b4f4f;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw; /* full-bleed */
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 40px 0; /* vertical padding only; inner handles horizontal spacing */
+  }
+
+  /* Inhalt zentrieren & max Breite wie bei hellen Blöcken */
+  .info-block--filled .inner {
+    max-width: 800px;   /* genau wie normale info-blocks */
+    margin: 0 auto;
+    padding: 0 20px;    /* horizontal padding matches section (20px) */
+  }
 
 /* Inhalt zentrieren & max Breite wie bei hellen Blöcken */
 .info-block--filled .inner {
