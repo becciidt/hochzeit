@@ -1,31 +1,455 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #faf9f7;
-  color: #333;
+/* Custom Font */
+@font-face {
+  font-family: 'Retro Signature';
+  src: url('fonts/RetroSignature.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Champagne and Limousines';
+  src: url('fonts/Champagne & Limousines.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Grundlayout */
+body {
+  margin: 0;
+  font-family: "Helvetica", sans-serif;
+  background: #f9f8f6;
+  color: #333;
+  line-height: 1.5;
+ 
+  width: 100%;
+  overflow-x: hidden;
+
+ }
+
+/* Hero-Bereich */
 .hero {
-  height: 100vh;
+  min-height: 65vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   padding: 20px;
+  padding-top: 12vh;
+  padding-bottom: 3vh;
+  /* show full image width without cropping */
+  background: url("image/Strand_R.jpeg") top center / 100% auto no-repeat;
+  background-attachment: scroll;
+  color: #6b4f4f;
+  position: relative;
+}
+.hero h1 {
+  font-family: 'Retro Signature', cursive;
+  font-size: 16rem;
+  margin-bottom: 6px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #214F3D;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 14px rgba(33,79,61,0.12);
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin: 0;
+.hero h3 {
+  font-family: 'Champagne and Limousines', cursive;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.4;
+  margin-top: -15px;
+  position: relative;
+  z-index: 1;
+  color: #6b4f4f;
+  opacity: 0.7;
+  filter: brightness(1.1);
 }
 
+/* Allgemeine Sektion */
 section {
-  padding: 20px;
+  padding: 20px 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Überschriften */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #6b4f4f;
+}
+
+.infos h2 {
+  font-family: "Helvetica", sans-serif;
+}
+ 
+
+/*.info-block {
+  position: relative;
+  padding: 20px 0;
+}
+
+Organic background shape for alternating sections 
+.info-block--bg {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><filter id="blur"><feGaussianBlur in="SourceGraphic" stdDeviation="4" /></filter></defs><path d="M0,80 Q300,20 600,40 Q900,30 1200,100 Q1200,200 1150,280 Q1100,350 900,380 Q600,400 300,380 Q100,360 0,320 L0,0 Z" fill="%23214F3D" opacity="1" filter="url(%23blur)"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  padding: 40px 20px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.info-block--bg h2,
+.info-block--bg p,
+.info-block--bg h3 {
+  color: white;
+  position: relative;
+  z-index: 10;
+}*/
+
+
+.infos p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 100;
+  text-align: justify;
+}
+
+p {
+  font-family: 'Champagne and Limousines', cursive;
+}
+
+/* Kartenlink */
+a.map {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background: #d7b59e;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Google Form */
 .googleform {
   width: 100%;
-  height: 400px;
+  height: 420px;
   border: none;
+  border-radius: 8px;
+  background: white;
+}
+
+/* Responsive Iframes */
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ablauf-Bild */
+.ablauf {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 18px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Vollbild-Bildsektion */
+.full-image {
+  width: 100%;
+  margin: 30px 0;   /* nur oben/unten Abstand */
+  padding: 0;
+}
+
+.full-image img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Media Queries für mobile Geräte */
+
+/* Kleine Bildschirme (Smartphones, unter 480px) */
+@media (max-width: 479px) {
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
+
+/* Mittlere Bildschirme (Tablets und große Smartphones, 480px - 768px) */
+@media (min-width: 480px) and (max-width: 768px) {
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 25px 20px;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
+
+/* Große Bildschirme (Desktops, über 768px) */
+@media (min-width: 769px) {
+  iframe {
+    width: 100% !important;
+    max-width: 600px;
+    height: 400px !important;
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+/* iPhone Pro Max spezifische Optimierung (430px width) */
+@media (max-width: 430px) {
+  .hero {
+    padding: 15px;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: 280px !important;
+  }
+}
+
+/* Timeline Sektion */
+.timeline {
+  padding: 80px 20px;
+  background: #fff;
+  position: relative;
+}
+
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  color: #6b4f4f;
+}
+
+.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Mittlere vertikale Linie */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #d7b59e, #c9a17e);
+  top: 0;
+}
+
+.timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Links */
+.timeline-left {
+  margin-right: 50%;
+  padding-right: 40px;
+  text-align: right;
+}
+
+.timeline-left .timeline-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Rechts */
+.timeline-right {
+  margin-left: 50%;
+  padding-left: 40px;
+  text-align: left;
+}
+
+.timeline-right .timeline-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Icon in der Mitte */
+.timeline-icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: #efe8e0;
+  border: 4px solid #d7b59e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  top: 0;
+  box-shadow: 0 0 0 4px #fff, 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+/* Content Box */
+.timeline-content {
+  background: #faf9f7;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.timeline-left .timeline-content {
+  border-left-color: #d7b59e;
+}
+
+.timeline-right .timeline-content {
+  border-left-color: #d7b59e;
+}
+
+.timeline-content:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.timeline-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #6b4f4f;
+}
+
+.timeline-content .time {
+  font-weight: bold;
+  color: #d7b59e;
+  margin: 5px 0 15px 0;
+  font-size: 1.1rem;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+  .timeline h2 {
+    font-size: 2rem;
+  }
+
+  .timeline-container::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    margin-bottom: 40px;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 80px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-icon {
+    left: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+  }
+
+  .timeline-content {
+    margin-left: 10px;
+  }
+}
+
+/* RSVP: force large visible area so embedded form doesn't get internal scrollbars */
+.rsvp {
+  padding: 40px 20px;
+  background: #fff;
+  min-height: 600px; /* ensure section has enough height */
+}
+
+.rsvp-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.rsvp-wrap iframe {
+  width: 100%;
+  /* Force a large height so the Google Form fits without its own scrollbar. */
+  height: 720px !important;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .rsvp {
+    min-height: 720px;
+  }
+  .rsvp-wrap iframe {
+    height: 720px !important;
+  }
 }
