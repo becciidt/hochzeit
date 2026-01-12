@@ -16,18 +16,19 @@
   <!-- Montserrat for infos -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <section class="hero">
-  <h1>Rebecca & Rainer</h1>
-  <h3>Wir heiraten am 18.07.2026!</h3>
+  <h1 class="fade-in">Rebecca & Rainer</h1>
+  <h3 class="fade-in">Wir heiraten am 18.07.2026!</h3>
 </section>
 
 <section class="infos">
   <div class="info-block">
-    <h2>Wie alles begann...</h2>
-    <p>Wir haben uns im Winter 2018 online kennengelernt. Aus ersten Nachrichten wurden Treffen, aus Treffen wuchs Vertrauen  und schließlich entstand daraus unser gemeinsamer Weg. Nun möchten wir mit euch den nächsten Schritt feiern: unsere kirchliche Trauung, zusammen mit euch: All den Menschen, die uns wichtig sind. Hierzu laden wir euch herzlich zu unserer kirchlichen Hochzeit im Sommer ein.</p>
-  </div>
+  <h2 class="fade-in-scroll">Wie alles begann...</h2>
+<p class="fade-in">
+  Wir haben uns im Winter 2018 online kennengelernt. Aus ersten Nachrichten wurden Treffen, aus Treffen wuchs Vertrauen und schließlich entstand daraus unser gemeinsamer Weg. Nun möchten wir mit euch den nächsten Schritt feiern: unsere kirchliche Trauung, zusammen mit euch - All den Menschen, die uns wichtig sind. Hierzu laden wir euch herzlich zu unserer kirchlichen Hochzeit im Sommer ein.</p>
   <div class="info-block">
     <h2>Der Ablauf</h2>
     <img src="image/Ablauf.png" alt="Ablauf der Hochzeit" class="ablauf">
@@ -77,6 +78,23 @@
     <iframe id="rsvpForm" src="https://docs.google.com/forms/d/e/1FAIpQLSfmJyHhXZrBQzlg7H9maSF1uHc07NCY6dXeBimqRtNCnPf0SA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" style="width:100%; border:0;">Wird geladen…</iframe>
   </div>
 </section>
+
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.2 }
+  );
+
+  document.querySelectorAll('.fade-in-scroll').forEach(el => observer.observe(el));
+</script>
 
 <script src="script.js"></script>
 </body>

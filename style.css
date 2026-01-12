@@ -26,9 +26,33 @@ body {
 
  }
 
+ .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.9s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.0s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Hero-Bereich */
 .hero {
-  min-height: 65vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -186,6 +210,9 @@ iframe {
 @media (max-width: 479px) {
   .hero {
     background-attachment: scroll;
+    min-height: 90vh; /* mobile: Hero soll hochkant ~90% der Fläche einnehmen */
+    background-position: center center;
+    background-size: cover; /* crop zur Hochkantansicht */
   }
 
   .hero h1 {

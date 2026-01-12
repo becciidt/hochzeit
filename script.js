@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
   document.documentElement.style.scrollBehavior = 'smooth';
 });
 
+/*Observer für Fade-In-Effekte*/
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
 // Adjust RSVP iframe height to fit viewport (can't read cross-origin content)
 function adjustRsvpHeight() {
   const iframe = document.getElementById('rsvpForm');
